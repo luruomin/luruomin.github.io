@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Adidas wm support (L1) issues collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="enable reserve location:R disable reserve location:0 enable acitve location:R disable acitve location:1 Hi L2Webui无法锁定库位，请帮忙更新123456789101112131415161718192021222324252627282930UPDATE locn_hdr SET LOC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Adidas wm support (L1) issues collection">
+<meta property="og:url" content="http://yoursite.com/2019/05/19/更新库位类型/index.html">
+<meta property="og:site_name" content="Adidas wm support (L1) issues collection">
+<meta property="og:description" content="enable reserve location:R disable reserve location:0 enable acitve location:R disable acitve location:1 Hi L2Webui无法锁定库位，请帮忙更新123456789101112131415161718192021222324252627282930UPDATE locn_hdr SET LOC">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-19T05:58:05.898Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Adidas wm support (L1) issues collection">
+<meta name="twitter:description" content="enable reserve location:R disable reserve location:0 enable acitve location:R disable acitve location:1 Hi L2Webui无法锁定库位，请帮忙更新123456789101112131415161718192021222324252627282930UPDATE locn_hdr SET LOC">
+  
+    <link rel="alternate" href="/atom.xml" title="Adidas wm support (L1) issues collection" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Adidas wm support (L1) issues collection</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-更新库位类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/19/更新库位类型/" class="article-date">
+  <time datetime="2019-05-19T05:58:05.898Z" itemprop="datePublished">2019-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>enable reserve location:R</p>
+<p>disable reserve location:0</p>
+<p>enable acitve location:R</p>
+<p>disable acitve location:1</p>
+<p>Hi L2<br>Webui无法锁定库位，请帮忙更新<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> locn_hdr <span class="keyword">SET</span> LOCN_CLASS=<span class="string">'1'</span></span><br><span class="line"><span class="keyword">WHERE</span> LOCN_ID <span class="keyword">IN</span>(</span><br><span class="line"><span class="keyword">select</span> loc.LOCN_ID</span><br><span class="line"><span class="keyword">from</span> pick_locn_hdr pd</span><br><span class="line"><span class="keyword">join</span> locn_hdr loc <span class="keyword">on</span> pd.locn_id=loc.locn_id</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">loc.LOCN_BRCD <span class="keyword">in</span>(</span><br><span class="line"><span class="string">'S04-20-1A1'</span>,</span><br><span class="line"><span class="string">'S04-20-1A2'</span>,</span><br><span class="line"><span class="string">'S04-20-1A3'</span>,</span><br><span class="line"><span class="string">'S04-20-1A4'</span>,</span><br><span class="line"><span class="string">'S04-20-1A5'</span>,</span><br><span class="line"><span class="string">'S04-20-2A1'</span>,</span><br><span class="line"><span class="string">'S04-20-2A2'</span>,</span><br><span class="line"><span class="string">'S04-20-2A3'</span>,</span><br><span class="line"><span class="string">'S04-20-2A4'</span>,</span><br><span class="line"><span class="string">'S04-20-2A5'</span>,</span><br><span class="line"><span class="string">'S04-20-2A6'</span>,</span><br><span class="line"><span class="string">'S04-20-3A2'</span>,</span><br><span class="line"><span class="string">'S04-20-3A3'</span>,</span><br><span class="line"><span class="string">'S04-20-3A5'</span>,</span><br><span class="line"><span class="string">'S04-20-4A1'</span>,</span><br><span class="line"><span class="string">'S04-20-4A3'</span>,</span><br><span class="line"><span class="string">'S04-20-4A4'</span>,</span><br><span class="line"><span class="string">'S04-20-5A1'</span>,</span><br><span class="line"><span class="string">'S04-20-5A2'</span>,</span><br><span class="line"><span class="string">'S04-20-5A5'</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">AND</span> locn_class=<span class="string">'A'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/19/更新库位类型/" data-id="cjvuj6gem0005za46czejrxcz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/19/数据库/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据库配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/19/取消补货功能/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/19/数据库/">数据库配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/19/更新库位类型/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/19/取消补货功能/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/19/退货NC补货异常/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/19/style&size_desc--sku_id/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Romain Lu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
